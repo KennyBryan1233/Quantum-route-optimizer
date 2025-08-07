@@ -1,38 +1,170 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Custom marker styles for route optimization */
+.route-marker-start {
+  background-color: #10b981;
+  border: 2px solid #065f46;
+  border-radius: 50%;
+}
+
+.route-marker-end {
+  background-color: #ef4444;
+  border: 2px solid #991b1b;
+  border-radius: 50%;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .lg\:col-span-2,
+  .lg\:col-span-1 {
+    grid-column: span 1;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Quantum vs Classical comparison styling */
+.quantum-result {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.classical-result {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Algorithm badge styles */
+.algorithm-badge-quantum {
+  background: linear-gradient(45deg, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.algorithm-badge-classical {
+  background: linear-gradient(45deg, #7c3aed, #a855f7);
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Route path visualization */
+.route-path {
+  font-family: 'Courier New', monospace;
+  background: #f8fafc;
+  border-left: 4px solid #3b82f6;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* Hover effects for interactive elements */
+.node-marker:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Performance metrics styling */
+.performance-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.performance-metric .label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.performance-metric .value {
+  font-family: 'Courier New', monospace;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+/* Map controls styling */
+.map-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Custom scrollbar for optimization history */
+.optimization-history::-webkit-scrollbar {
+  width: 6px;
+}
+
+.optimization-history::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.optimization-history::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.optimization-history::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
